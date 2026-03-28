@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professional Typing Suite</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="setup-menu">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="app-logo">
+            <h1>Speed Tracker</h1>
+            <h2 style="color: #8db596; margin-bottom: 30px;">Unleash Your Fingertips</h2>
+            
+            <div class="mode-grid">
+                <button onclick="startTest(1)">1 Minute</button>
+                <button onclick="startTest(5)">5 Minutes</button>
+                <button onclick="startTest(10)">10 Minutes</button>
+            </div>
+        </div>
+
+        <div id="test-area" class="hidden">
+            <div class="stats-bar">
+                <span>Time Remaining: <b id="timer">00:00</b></span>
+                <span>Current WPM: <b id="wpm">0</b></span>
+            </div>
+            <div id="quote-display" class="quote-box"></div>
+            <textarea id="quote-input" spellcheck="false" autofocus placeholder="Start typing..."></textarea>
+        </div>
+
+        <div id="result-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Test Summary</h2>
+                <div id="final-stats"></div>
+                <button onclick="location.reload()" class="retry-btn">Return to Menu</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
